@@ -1,0 +1,11 @@
+--- config.def.h
++++ config.def.h
+@@ -108,7 +108,7 @@ static const char *colorname[] = {
+ 
+ 	/* more colors can be added after 255 to use with DefaultXX */
+ 	"#cccccc",
+-	"#555555",
++	"#2e3440",
+ };
+ 
+ 
