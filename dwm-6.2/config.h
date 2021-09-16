@@ -21,13 +21,6 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577"; //orig #7703fc
-// User Color Values
-static const char stat_col[]        = "#444444";
-static const char tag_sel_col[]     = "#7703fc";
-static const char tag_col[]	    = "#444444";
-static const char inf_sel_col[]	    = "5c3e8a" ;
-static const char inf_col[]	    = "eeeeee" ;
-//
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
