@@ -1,9 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
-#include <X11/XF86keysym.h>
-
-//Value For Tags #7703fc
-//Value For Window Bar #5c3e8a
+// #include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -80,17 +77,20 @@ static const char *termcmd[]  = { "st", NULL };
 // Adds optional support for flameshot gui (uncomment lines 81 & 90 to enable)
 /* static const char *prtscrcmd[] = { "flameshot", "gui", NULL}; */
 
-// Adds optional support for volume keys (uncomment lines 84-86 amd 91-93 to enable)
+// Adds optional support for volume keys (uncomment lines 84-86, 91-93  and 3 to enable)
 /* static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL }; */
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-/*   { 0,				XK_Print,  spawn,	   {.v = prtscrcmd} }. // Uncomment this and line 81 to enable flameshot binding
-     /* { MODKEY,                       XK_F11, spawn, {.v = downvol } },     // Volume Bindings       
-	{ MODKEY,                       XK_F9,  spawn, {.v = mutevol } },     // Uncomment lines 84-86 & 91-93 		   
-	{ MODKEY,                       XK_F12, spawn, {.v = upvol   } }, */  // to Enable
+
+   //   { 0,				XK_Print,  spawn,	   {.v = prtscrcmd} }.         // Uncomment this and line 81 to enable flameshot binding
+     
+     /* { MODKEY,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },     // Volume Bindings       
+	{ MODKEY,                       XF86XK_AudioMute,  spawn, {.v = mutevol } },           // Uncomment lines 84-86, 91-93 & 3 to Enable		   
+	{ MODKEY,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } }, */  // Original Code: https://gist.github.com/palopezv/efd34059af6126ad970940bcc6a90f2e */
+	
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
