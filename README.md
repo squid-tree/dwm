@@ -3,13 +3,13 @@
 # Contains ST, Joestandring's Dwm-Bar, DWM, DMenu, wallpaper and .xinitrc
 
 # Patches & Customization:
-  St:
+  # St:
     # Alpha
     # Scrollback
     # Scrollback Alt Screen
     # Scrollback Mouse
     # Selection Colour
-  DWM:
+  # DWM:
     # Alpha
     # Fullgaps
     # Colour Bar
