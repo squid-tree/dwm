@@ -1,4 +1,4 @@
-# Contains ST, Joestandring's Dwm-Bar, DWM, DMenu, wallpaper and .xinitrc
+## Contains ST, Joestandring's Dwm-Bar, DWM, DMenu, wallpaper and .xinitrc
 
 ## Patches & Customization
 #### St:
