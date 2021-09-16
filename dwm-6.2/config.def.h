@@ -6,9 +6,6 @@
 //Value For Window Bar #5c3e8a
 
 /* appearance */
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -80,11 +77,20 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
+// Adds optional support for flameshot gui (uncomment lines 81 & 90 to enable)
+/* static const char *prtscrcmd[] = { "flameshot", "gui", NULL}; */
+
+// Adds optional support for volume keys (uncomment lines 84-86 amd 91-93 to enable)
+/* static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL }; */
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_F11, spawn, {.v = downvol } },
-	{ MODKEY,                       XK_F9,  spawn, {.v = mutevol } },
-	{ MODKEY,                       XK_F12, spawn, {.v = upvol   } },
+/*   { 0,				XK_Print,  spawn,	   {.v = prtscrcmd} }. // Uncomment this and line 81 to enable flameshot binding
+     /* { MODKEY,                       XK_F11, spawn, {.v = downvol } },     // Volume Bindings       
+	{ MODKEY,                       XK_F9,  spawn, {.v = mutevol } },     // Uncomment lines 84-86 & 91-93 		   
+	{ MODKEY,                       XK_F12, spawn, {.v = upvol   } }, */  // to Enable
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
