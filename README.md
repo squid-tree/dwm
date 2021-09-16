@@ -14,6 +14,8 @@
 * Colour Bar
 * Removed White Box For Active Tag
 * Removed White Box For Floating Window
+* Optional Volume Keybinds
+* Optional Flameshot Keybinds
 
 #### DWM-bar:
 * Removed All Modules Except For PulseAudio
