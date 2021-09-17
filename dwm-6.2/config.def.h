@@ -85,7 +85,7 @@ static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "togg
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 
-   //   { 0,				XK_Print,  spawn,	   {.v = prtscrcmd} }.         // Uncomment this and line 81 to enable flameshot binding
+   //   { 0,				XK_Print,  spawn,	   {.v = prtscrcmd} },         // Uncomment this and line 81 to enable flameshot binding
      
      /* { 0,            	        XF86XK_AudioLowerVolume, spawn, {.v = downvol } },     // Volume Bindings       
 	{ 0,    	                XF86XK_AudioMute,  spawn, {.v = mutevol } },           // Uncomment lines 84-86, 91-93 & 3 to Enable		   
