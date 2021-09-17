@@ -87,9 +87,9 @@ static Key keys[] = {
 
    //   { 0,				XK_Print,  spawn,	   {.v = prtscrcmd} }.         // Uncomment this and line 81 to enable flameshot binding
      
-     /* { MODKEY,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },     // Volume Bindings       
-	{ MODKEY,                       XF86XK_AudioMute,  spawn, {.v = mutevol } },           // Uncomment lines 84-86, 91-93 & 3 to Enable		   
-	{ MODKEY,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } }, */  // Original Code: https://gist.github.com/palopezv/efd34059af6126ad970940bcc6a90f2e */
+     /* { 0,            	        XF86XK_AudioLowerVolume, spawn, {.v = downvol } },     // Volume Bindings       
+	{ 0,    	                XF86XK_AudioMute,  spawn, {.v = mutevol } },           // Uncomment lines 84-86, 91-93 & 3 to Enable		   
+	{ 0,	                        XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } }, */  // Original Code: https://gist.github.com/palopezv/efd34059af6126ad970940bcc6a90f2e */
 	
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
