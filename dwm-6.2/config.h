@@ -78,9 +78,9 @@ static const char *termcmd[]  = { "st", NULL };
 /* static const char *prtscrcmd[] = { "flameshot", "gui", NULL}; */
 
 // Adds optional support for volume keys (uncomment lines 84-86, 91-93  and 3 to enable)
-/* static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL }; */
+/* static const char *upvol[]   = { "/usr/bin/pamixer", "--increase", "5",  NULL };
+static const char *downvol[] = { "/usr/bin/pamixer", "--decrease", "5",     NULL };
+static const char *mutevol[] = { "/usr/bin/pamixer", "--toggle-mute",   NULL }; */
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
