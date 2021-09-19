@@ -17,10 +17,10 @@ fi
 ~/dwm-bar/dwm_bar.sh &
  
 # wallpaper
-feh --bg-scale ~/wallpaper.png &
+feh --bg-scale ~/wallpaper.png 
 
 # xrandr [Customise for your needs]
-xrandr --output DP-0 --primary --right-of HDMI-0 &
+xrandr --output DP-0 --primary --right-of HDMI-0 
 
 # picom
 
