@@ -22,6 +22,7 @@ export SEP1=" ("
 export SEP2=")"
 
 # Import the modules
+. "$DIR/bar-functions/dwm_battery.sh"
 . "$DIR/bar-functions/dwm_pulse.sh"
 #parallelize() {
 #    while true
