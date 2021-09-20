@@ -4,7 +4,7 @@
 
 ## Changes From Original
 * Added Shortcuts For Brightness Ajustment
-* Added Brightness Meter In Bar
+* Added Brightness Indicator In Bar
 * Added Battery Indicator To Bar
 
 ## See Original Repo For More Details
