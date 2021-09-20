@@ -44,7 +44,7 @@ do
     #lowerbar=""
 
     
-    xsetroot -name "$(dwm_pulse)$(date +" %a %d/%m/%y %H:%M")"
+    xsetroot -name "$(dwm_battery)$(dwm_pulse)$(date +" %a %d/%m/%y %H:%M")"
     
     # Uncomment the line below to enable the lowerbar 
 #    xsetroot -name "$upperbar;$lowerbar"
