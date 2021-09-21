@@ -4,8 +4,7 @@
 
 ## Changes From Original
 * Added Shortcuts For Brightness Ajustment
-* Added Brightness Indicator In Bar
 * Added Battery Indicator To Bar
-* Added Font Required For Battery And Brightness Icons
+* Added Font Required For Battery Icons
 
 ## See Original Repo For More Details
