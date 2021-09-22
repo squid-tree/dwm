@@ -96,7 +96,7 @@ static Key keys[] = {
 	{ 0,	                        XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },     // Original Code: https://gist.github.com/palopezv/efd34059af6126ad970940bcc6a90f2e */
 	
 	{ 0,				XF86XK_MonBrightnessUp, spawn, {.v = brtup	} }, // Brightness Up
-	{ 0, 				XF86XK_MonBrightnessUp, spawn, {.v = brtdwn } }. // Brightness Down
+	{ 0, 				XF86XK_MonBrightnessUp, spawn, {.v = brtdwn } }, // Brightness Down
 	
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
