@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
-// #include <X11/XF86keysym.h>
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -80,7 +80,7 @@ static const char *prtscrcmd[] = { "flameshot", "gui", NULL};
 // Volume Keys
 static const char *upvol[]   = { "/usr/bin/pamixer", "--increase", "5",  NULL };
 static const char *downvol[] = { "/usr/bin/pamixer", "--decrease", "5",     NULL };
-static const char *mutevol[] = { "/usr/bin/pamixer", "--toggle-mute",   NULL }; */
+static const char *mutevol[] = { "/usr/bin/pamixer", "--toggle-mute",   NULL }; 
 
 // Brightness Script
 static const char *brtup[] = { "~/dwm-laptop/brt.sh"/*Path To Brightness Script*/, "-u", NULL }; 
