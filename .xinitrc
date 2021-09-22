@@ -14,10 +14,10 @@ fi
 #setxkbmap -option caps:backspace &
 
 # DWM Bar
-~/dwm-bar/dwm_bar.sh &
+~/dwm-laptop/dwm-bar/dwm_bar.sh &
  
 # wallpaper
-feh --bg-scale ~/wallpaper.png 
+feh --bg-scale ~/dwm-laptop/wallpaper.png 
 
 # xrandr [Customise for your needs]
 xrandr --output DP-0 --primary --right-of HDMI-0 
