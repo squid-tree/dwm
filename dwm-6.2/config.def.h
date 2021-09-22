@@ -21,11 +21,11 @@ static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
-	[SchemeStatus]  = { col_gray3, "#444444",  "#000000"  }, //col_gray1 // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]  = { col_gray4, "#7703fc",  "#000000"  }, //col_cyan // Tagbar left selected {text,background,not used but cannot be empty}
-    [SchemeTagsNorm]  = { col_gray3, "#444444",  "#000000"  }, //col_gray1 // Tagbar left unselected {text,background,not used but cannot be empty}
-    [SchemeInfoSel]  = { col_gray4, "#5c3e8a",  "#000000"  }, //col_cyan // infobar middle  selected {text,background,not used but cannot be empty}
-    [SchemeInfoNorm]  = { col_gray3, "#222222",  "#000000"  },//col_gray1 // infobar middle  unselected {text,background,not used but cannot be empty}
+	[SchemeStatus]  = { col_gray3, "#444444",  "#000000"  }, //statusbar right {text,background,not used but cannot be empty}
+	[SchemeTagsSel]  = { col_gray4, "#7703fc",  "#000000"  }, //tagbar left selected {text,background,not used but cannot be empty}
+    [SchemeTagsNorm]  = { col_gray3, "#444444",  "#000000"  }, //tagbar left unselected {text,background,not used but cannot be empty}
+    [SchemeInfoSel]  = { col_gray4, "#5c3e8a",  "#000000"  }, //infobar middle  selected {text,background,not used but cannot be empty}
+    [SchemeInfoNorm]  = { col_gray3, "#222222",  "#000000"  },//infobar middle  unselected {text,background,not used but cannot be empty}
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -82,6 +82,10 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *downvol[] = { "/usr/bin/pamixer", "--decrease", "5",     NULL };
 static const char *mutevol[] = { "/usr/bin/pamixer", "--toggle-mute",   NULL }; */
 
+// Executes Brightness Script
+static const char *brtup[] = { "~/dwm-laptop/brt.sh"/*Path To Brightness Script*/, "-u", NULL }; 
+static const char *brtdwn[] = { "~/dwm-laptop/brt.sh", "-d", NULL };
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 
@@ -90,6 +94,9 @@ static Key keys[] = {
      /* { 0,            	        XF86XK_AudioLowerVolume, spawn, {.v = downvol } },     // Volume Bindings       
 	{ 0,    	                XF86XK_AudioMute,  spawn, {.v = mutevol } },           // Uncomment lines 84-86, 91-93 & 3 to Enable		   
 	{ 0,	                        XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } }, */  // Original Code: https://gist.github.com/palopezv/efd34059af6126ad970940bcc6a90f2e */
+	
+	{ 0,				XF86MonBrightnessUp, spawn, {.v = brtup	} }, // Brightness Up
+	{ 0, 				XF86MonBrightnessUp, spawn, {.v = brtdwn } }. // Brightness Down
 	
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
