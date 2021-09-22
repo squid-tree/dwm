@@ -1,20 +1,14 @@
 /* See LICENSE file for copyright and license details. */
 
-#include <X11/XF86keysym.h>
-
-//Value For Tags #7703fc
-//Value For Window Bar #5c3e8a
+// #include <X11/XF86keysym.h>
 
 /* appearance */
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "MesloLGLDZ-Regular.ttf:size=10" };
+static const char *fonts[]          = { "MesloLGLDZ-Regular.ttf:size=10", "icomoon:style=Regular:size=12" };
 static const char dmenufont[]       = "MesloLGLDZ-Regular.ttf:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -27,11 +21,11 @@ static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
-	[SchemeStatus]  = { col_gray3, col_gray1,  "#444444"  }, // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]  = { col_gray4, col_cyan,  "#7703fc"  }, // Tagbar left selected {text,background,not used but cannot be empty}
-    [SchemeTagsNorm]  = { col_gray3, col_gray1,  "#444444"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
-    [SchemeInfoSel]  = { col_gray4, col_cyan,  "#5c3e8a"  }, // infobar middle  selected {text,background,not used but cannot be empty}
-    [SchemeInfoNorm]  = { col_gray3, col_gray1,  "#eeeeee"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
+	[SchemeStatus]  = { col_gray3, "#444444",  "#000000"  }, //statusbar right {text,background,not used but cannot be empty}
+	[SchemeTagsSel]  = { col_gray4, "#7703fc",  "#000000"  }, //tagbar left selected {text,background,not used but cannot be empty}
+    [SchemeTagsNorm]  = { col_gray3, "#444444",  "#000000"  }, //tagbar left unselected {text,background,not used but cannot be empty}
+    [SchemeInfoSel]  = { col_gray4, "#5c3e8a",  "#000000"  }, //infobar middle  selected {text,background,not used but cannot be empty}
+    [SchemeInfoNorm]  = { col_gray3, "#222222",  "#000000"  },//infobar middle  unselected {text,background,not used but cannot be empty}
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -77,14 +71,33 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-h", "23",/*"-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4,*/ NULL };
 static const char *termcmd[]  = { "st", NULL };
+
+// Flameshot
+static const char *prtscrcmd[] = { "flameshot", "gui", NULL}; 
+
+// Volume Keys
+static const char *upvol[]   = { "/usr/bin/pamixer", "--increase", "5",  NULL };
+static const char *downvol[] = { "/usr/bin/pamixer", "--decrease", "5",     NULL };
+static const char *mutevol[] = { "/usr/bin/pamixer", "--toggle-mute",   NULL }; */
+
+// Brightness Script
+static const char *brtup[] = { "~/dwm-laptop/brt.sh"/*Path To Brightness Script*/, "-u", NULL }; 
+static const char *brtdwn[] = { "~/dwm-laptop/brt.sh", "-d", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_F11, spawn, {.v = downvol } },
-	{ MODKEY,                       XK_F9,  spawn, {.v = mutevol } },
-	{ MODKEY,                       XK_F12, spawn, {.v = upvol   } },
+
+        { 0,				XK_Print,  spawn,	   {.v = prtscrcmd} },         // Uncomment this and line 81 to enable flameshot binding
+     
+        { 0,            	        XF86XK_AudioLowerVolume, spawn, {.v = downvol } },     // Volume Bindings       
+	{ 0,    	                XF86XK_AudioMute,  spawn, {.v = mutevol } },           // Uncomment lines 84-86, 91-93 & 3 to Enable		   
+	{ 0,	                        XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },     // Original Code: https://gist.github.com/palopezv/efd34059af6126ad970940bcc6a90f2e */
+	
+	{ 0,				XF86MonBrightnessUp, spawn, {.v = brtup	} }, // Brightness Up
+	{ 0, 				XF86MonBrightnessUp, spawn, {.v = brtdwn } }. // Brightness Down
+	
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -139,4 +152,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
