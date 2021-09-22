@@ -15,9 +15,9 @@ dwm_pulse () {
         elif [ "$VOL" = 0 ]; then
             printf " 0%% "
         elif [ "$VOL" -ge 10 ] && [ "$VOL" -le 33 ]; then
-            printf "ນ %s%%" "$VOL"
+            printf " %s%%" "$VOL"
         elif [ "$VOL" -gt 0 ] && [ "$VOL" -lt 10 ]; then
-            printf "ນ %s%% " "$VOL"
+            printf " %s%% " "$VOL"
         elif [ "$VOL" -gt 33 ] && [ "$VOL" -le 66 ]; then
             printf " %s%%" "$VOL"
         else
