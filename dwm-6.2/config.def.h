@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
-// #include <X11/XF86keysym.h>
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -74,26 +74,26 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-h", "23",/*"-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4,*/ NULL };
 static const char *termcmd[]  = { "st", NULL };
 
-// Adds optional support for flameshot gui (uncomment lines 81 & 90 to enable)
-/* static const char *prtscrcmd[] = { "flameshot", "gui", NULL}; */
+// Flameshot
+static const char *prtscrcmd[] = { "flameshot", "gui", NULL}; 
 
-// Adds optional support for volume keys (uncomment lines 84-86, 91-93  and 3 to enable)
-/* static const char *upvol[]   = { "/usr/bin/pamixer", "--increase", "5",  NULL };
+// Volume Keys
+static const char *upvol[]   = { "/usr/bin/pamixer", "--increase", "5",  NULL };
 static const char *downvol[] = { "/usr/bin/pamixer", "--decrease", "5",     NULL };
-static const char *mutevol[] = { "/usr/bin/pamixer", "--toggle-mute",   NULL }; */
+static const char *mutevol[] = { "/usr/bin/pamixer", "--toggle-mute",   NULL }; 
 
-// Executes Brightness Script
+// Brightness Script
 static const char *brtup[] = { "~/dwm-laptop/brt.sh"/*Path To Brightness Script*/, "-u", NULL }; 
 static const char *brtdwn[] = { "~/dwm-laptop/brt.sh", "-d", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 
-   //   { 0,				XK_Print,  spawn,	   {.v = prtscrcmd} },         // Uncomment this and line 81 to enable flameshot binding
+        { 0,				XK_Print,  spawn,	   {.v = prtscrcmd} },         // Uncomment this and line 81 to enable flameshot binding
      
-     /* { 0,            	        XF86XK_AudioLowerVolume, spawn, {.v = downvol } },     // Volume Bindings       
+        { 0,            	        XF86XK_AudioLowerVolume, spawn, {.v = downvol } },     // Volume Bindings       
 	{ 0,    	                XF86XK_AudioMute,  spawn, {.v = mutevol } },           // Uncomment lines 84-86, 91-93 & 3 to Enable		   
-	{ 0,	                        XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } }, */  // Original Code: https://gist.github.com/palopezv/efd34059af6126ad970940bcc6a90f2e */
+	{ 0,	                        XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },     // Original Code: https://gist.github.com/palopezv/efd34059af6126ad970940bcc6a90f2e */
 	
 	{ 0,				XF86MonBrightnessUp, spawn, {.v = brtup	} }, // Brightness Up
 	{ 0, 				XF86MonBrightnessUp, spawn, {.v = brtdwn } }. // Brightness Down
