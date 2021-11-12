@@ -3,8 +3,7 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 5;        /* gaps between windows */
+static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -19,12 +18,12 @@ static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { col_gray3, col_gray1, "#7703fc" },
+	[SchemeSel]  = { col_gray4, col_cyan,  "#7703fc"  },
 	[SchemeStatus]  = { col_gray3, "#444444",  "#000000"  }, //statusbar right {text,background,not used but cannot be empty}
 	[SchemeTagsSel]  = { col_gray4, "#7703fc",  "#000000"  }, //tagbar left selected {text,background,not used but cannot be empty}
     [SchemeTagsNorm]  = { col_gray3, "#444444",  "#000000"  }, //tagbar left unselected {text,background,not used but cannot be empty}
-    [SchemeInfoSel]  = { col_gray4, "#5c3e8a",  "#000000"  }, //infobar middle  selected {text,background,not used but cannot be empty}
+    [SchemeInfoSel]  = { col_gray4, "#222222",  "#000000"  }, //infobar middle  selected {text,background,not used but cannot be empty}
     [SchemeInfoNorm]  = { col_gray3, "#222222",  "#000000"  },//infobar middle  unselected {text,background,not used but cannot be empty}
 };
 static const unsigned int alphas[][3]      = {
@@ -75,16 +74,16 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 
 // Flameshot
-static const char *prtscrcmd[] = { "flameshot", "gui", NULL}; 
+static const char *prtscrcmd[] = { "flameshot", "gui", NULL }; 
 
 // Volume Keys
 static const char *upvol[]   = { "/usr/bin/pamixer", "--increase", "5",  NULL };
-static const char *downvol[] = { "/usr/bin/pamixer", "--decrease", "5",     NULL };
+static const char *downvol[] = { "/usr/bin/pamixer", "--decrease", "5",  NULL };
 static const char *mutevol[] = { "/usr/bin/pamixer", "--toggle-mute",   NULL }; 
 
 // Brightness Script
-static const char *brtup[] = { "~/dwm-laptop/brt.sh"/*Path To Brightness Script*/, "-u", NULL }; 
-static const char *brtdwn[] = { "~/dwm-laptop/brt.sh", "-d", NULL };
+static const char *brtup[] = { "/home/squidtree/dwm-laptop/brt.sh"/*Path To Brightness Script*/, "-u", NULL }; 
+static const char *brtdwn[] = { "/home/squidtree/dwm-laptop/brt.sh", "-d", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -95,8 +94,8 @@ static Key keys[] = {
 	{ 0,    	                XF86XK_AudioMute,  spawn, {.v = mutevol } },           // Uncomment lines 84-86, 91-93 & 3 to Enable		   
 	{ 0,	                        XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },     // Original Code: https://gist.github.com/palopezv/efd34059af6126ad970940bcc6a90f2e */
 	
-	{ 0,				XF86XK_MonBrightnessUp, spawn, {.v = brtup	} }, // Brightness Up
-	{ 0, 				XF86XK_MonBrightnessUp, spawn, {.v = brtdwn } }, // Brightness Down
+	{ 0,				XF86XK_MonBrightnessUp, spawn, {.v = brtup  } }, // Brightness Up
+	{ 0,	 			XF86XK_MonBrightnessDown, spawn, {.v = brtdwn } }, // Brightness Down
 	
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
@@ -121,9 +120,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
-	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
