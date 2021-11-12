@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "Liberation Mono:pixelsize=15:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -124,6 +124,7 @@ static const char *colorname[] = {
 	"#cccccc",
 	"#5310b0",
 	"black",
+	"#8c8fab",
 };
 
 
@@ -137,7 +138,7 @@ static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 256;
 
 /* Colors used for selection */
-unsigned int selectionbg = 257;
+unsigned int selectionbg = 259;
 unsigned int selectionfg = 7;
 /* If 0 use selectionfg as foreground in order to have a uniform foreground-color */
 /* Else if 1 keep original foreground-color of each cell => more colors :) */
