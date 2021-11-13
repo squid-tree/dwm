@@ -5,8 +5,16 @@
 ## Changes From Original
 * Added Shortcuts For Brightness Ajustment
 * Added Battery Indicator To Bar
-* Added Brightness Indicator To Bar (May cause lag, in which case disable it in dwm-bar or decrease the loop frequency)
 * Added Jam Icons 
+
+## Dependencies
+* feh
+* bc
+* flameshot
+* xorg
+* xorg-xinit
+* pamixer
+* icomoon font (included in repo, install to font directory) 
 
 ## See Original Repo For More Details
 
