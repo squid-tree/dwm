@@ -15,6 +15,7 @@
 * xorg-xinit
 * pamixer
 * icomoon font (included in repo, install to font directory) 
+* picom
 
 ## See Original Repo For More Details
 
