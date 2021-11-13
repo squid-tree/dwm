@@ -11,7 +11,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 # (optional) set capslock to backspace
-#setxkbmap -option caps:backspace &
+setxkbmap -option caps:backspace 
+setxkbmap -option lv3:ralt_switch
+setxkbmap -option esperanto:qwerty
 
 # DWM Bar
 ~/dwm-laptop/dwm-bar/dwm_bar.sh &
@@ -20,7 +22,11 @@ fi
 feh --bg-scale ~/dwm-laptop/wallpaper.png 
 
 # xrandr [Customise for your needs]
-xrandr --output DP-0 --primary --right-of HDMI-0 
+# xrandr --output DP-0 --primary --right-of HDMI-0 
+
+# Fcitx5
+
+fcitx5
 
 # picom
 
@@ -29,3 +35,4 @@ picom -b
 # dwm
 
 exec dwm
+
