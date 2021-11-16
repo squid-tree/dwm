@@ -26,7 +26,10 @@ feh --bg-scale ~/dwm-laptop/wallpaper.png
 
 # Fcitx5
 
-fcitx5
+fcitx5 &
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS='@im=fcitx'
 
 # picom
 
