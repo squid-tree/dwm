@@ -6,7 +6,7 @@ dev_find () {
 }	
 
 brt_find () {
-	QERB=$(xrandr --verbose | grep Br | rev | cut -d " " -f1 | rev)
+	QERB=$(xrandr --verbose | grep Br | rev | cut -d " " -f1 | rev | xargs)
 	INC=0.1
 	if [ "$1" = "-u" ]; then
 		printf "$(echo "$QERB + $INC" | bc )"
