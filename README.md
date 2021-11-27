@@ -15,6 +15,8 @@
 * xorg-xinit
 * pamixer
 * ttf-roboto-mono
+* ttf-meslo (aur)
+* ttf-symbola (aur)
 * icomoon font (included in repo, install to font directory) 
 
 ## See Original Repo For More Details
