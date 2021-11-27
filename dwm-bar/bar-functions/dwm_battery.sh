@@ -8,6 +8,8 @@ dwm_battery () {
 	printf "%s" "$SEP1"
 	if [ "$STATUS" = "Charging" ]; then
 		if [ "$CHARGE" -ge 80 ]; then
+			printf " Warning!!!! Above 80%%! Unplug for battery health"
+		elif [ "$CHARGE" -ge 50 ]; then
 			printf " %s%%" "$CHARGE"
 		else
 			printf " %s%%" "$CHARGE"
