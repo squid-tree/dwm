@@ -13,7 +13,6 @@ fi
 # (optional) set capslock to backspace
 setxkbmap -option caps:backspace 
 setxkbmap -option lv3:ralt_switch
-setxkbmap -option esperanto:qwerty
 
 # DWM Bar
 ~/dwm-laptop/dwm-bar/dwm_bar.sh &
