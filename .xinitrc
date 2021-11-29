@@ -18,7 +18,7 @@ setxkbmap -option lv3:ralt_switch
 ~/dwm-laptop/dwm/dwm_bar.sh &
  
 # wallpaper
-feh --bg-scale ~/dwm-/wallpaper.png 
+feh --bg-scale ~/dwm/wallpaper.png 
 
 # xrandr [Customise for your needs]
 # xrandr --output DP-0 --primary --right-of HDMI-0 
