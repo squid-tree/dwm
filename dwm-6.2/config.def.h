@@ -78,9 +78,6 @@ static const char *upvol[]   = { "/usr/bin/pamixer", "--increase", "5",  NULL };
 static const char *downvol[] = { "/usr/bin/pamixer", "--decrease", "5",  NULL };
 static const char *mutevol[] = { "/usr/bin/pamixer", "--toggle-mute",   NULL }; 
 
-// Brightness Script
-static const char *brtup[] = { "/home/squidtree/dwm-laptop/brt.sh"/*Path To Brightness Script*/, "-u", NULL }; 
-static const char *brtdwn[] = { "/home/squidtree/dwm-laptop/brt.sh", "-d", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -90,9 +87,6 @@ static Key keys[] = {
         { 0,            	        XF86XK_AudioLowerVolume, spawn, {.v = downvol } },     // Volume Bindings       
 	{ 0,    	                XF86XK_AudioMute,  spawn, {.v = mutevol } },           // Uncomment lines 84-86, 91-93 & 3 to Enable		   
 	{ 0,	                        XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },     // Original Code: https://gist.github.com/palopezv/efd34059af6126ad970940bcc6a90f2e */
-	
-	{ 0,				XF86XK_MonBrightnessUp, spawn, {.v = brtup  } }, // Brightness Up
-	{ 0,	 			XF86XK_MonBrightnessDown, spawn, {.v = brtdwn } }, // Brightness Down
 	
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
