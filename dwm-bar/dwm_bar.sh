@@ -22,9 +22,7 @@ export SEP1=" "
 export SEP2=" "
 export SEP3="|"
 # Import the modules
-. "$DIR/bar-functions/dwm_battery.sh"
 . "$DIR/bar-functions/dwm_pulse.sh"
-. "$DIR/bar-functions/dwm_brightness.sh"
 #parallelize() {
 #    while true
 #    do
@@ -46,7 +44,7 @@ do
     #lowerbar=""
 
     
-    xsetroot -name "$(dwm_battery)$(dwm_pulse)$(date +" %a %d/%m/%y %H:%M")"
+    xsetroot -name "$(dwm_pulse)$(date +" %a %d/%m/%y %H:%M")"
     
     # Uncomment the line below to enable the lowerbar 
 #    xsetroot -name "$upperbar;$lowerbar"

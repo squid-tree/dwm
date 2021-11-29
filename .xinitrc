@@ -15,7 +15,7 @@ setxkbmap -option caps:backspace
 setxkbmap -option lv3:ralt_switch
 
 # DWM Bar
-~/dwm-laptop/dwm/dwm_bar.sh &
+~/dwm/dwm-bar/dwm_bar.sh &
  
 # wallpaper
 feh --bg-scale ~/dwm/wallpaper.png 
