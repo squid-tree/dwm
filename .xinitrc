@@ -15,7 +15,7 @@ setxkbmap -option caps:backspace
 setxkbmap -option lv3:ralt_switch
 
 # DWM Bar
-~/dwm/dwm-bar/dwm_bar.sh &
+# ~/dwm/dwm-bar/dwm_bar.sh &
  
 # wallpaper
 feh --bg-scale ~/dwm/wallpaper.png 
@@ -23,6 +23,12 @@ feh --bg-scale ~/dwm/wallpaper.png
 # xrandr [Customise for your needs]
 # xrandr --output DP-0 --primary --right-of HDMI-0 
 
+while true; do
+  pamixer --get-volume > /tmp/volume;
+  sleep 1.0
+done &
+
+~/dwm/dwmstatus/dwmstatus &
 # Fcitx5
 
 fcitx5 &
