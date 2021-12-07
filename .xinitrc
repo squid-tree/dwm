@@ -15,28 +15,21 @@ setxkbmap -option caps:backspace
 setxkbmap -option lv3:ralt_switch
 
 # DWM Bar
-# ~/dwm/dwm-bar/dwm_bar.sh &
- 
+~/dwm/dwmstatus/dwmstatus &
+
 # wallpaper
 feh --bg-scale ~/dwm/wallpaper.png 
 
 # xrandr [Customise for your needs]
 # xrandr --output DP-0 --primary --right-of HDMI-0 
 
-while true; do
-  pamixer --get-volume > /tmp/volume;
-  sleep 1.0
-done &
+nvidia-settings --load-config-only &
 
-~/dwm/dwmstatus/dwmstatus &
 # Fcitx5
-
 fcitx5 &
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS='@im=fcitx'
 
 # dwm
-
 exec dwm
-
