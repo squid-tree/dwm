@@ -67,7 +67,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-h", "23",/*"-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4,*/ NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-h", "24",/*"-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4,*/ NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 // Flameshot
@@ -85,7 +85,6 @@ static Key keys[] = {
         { 0,				XK_Print,  spawn,	   {.v = prtscrcmd} },         // Uncomment this and line 81 to enable flameshot binding
      
         { 0,            	        XF86XK_AudioLowerVolume, spawn, {.v = downvol } },     // Volume Bindings       
-	{ 0,    	                XF86XK_AudioMute,  spawn, {.v = mutevol } },           // Uncomment lines 84-86, 91-93 & 3 to Enable		   
 	{ 0,	                        XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },     // Original Code: https://gist.github.com/palopezv/efd34059af6126ad970940bcc6a90f2e */
 	
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
