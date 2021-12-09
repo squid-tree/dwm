@@ -20,5 +20,4 @@
 * icomoon font (included in repo, install to font directory) 
 
 ## Setup Guide
-1. chmod +x ~/dwm/dwm-bar/dwm\_bar.sh
-2. cp ~/dwm/.xinitrc ~/
+chmod +x install.sh && ./install.sh

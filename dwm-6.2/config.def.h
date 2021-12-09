@@ -76,8 +76,6 @@ static const char *prtscrcmd[] = { "flameshot", "gui", NULL };
 // Volume Keys
 static const char *upvol[]   = { "/usr/bin/pamixer", "--increase", "5",  NULL };
 static const char *downvol[] = { "/usr/bin/pamixer", "--decrease", "5",  NULL };
-static const char *mutevol[] = { "/usr/bin/pamixer", "--toggle-mute",   NULL }; 
-
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */

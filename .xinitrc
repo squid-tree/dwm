@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Installed with install script from git repo
+
 # based off https://gist.github.com/pedrominicz/fb9f3e94d2acb9aba6f28fffd9867137
 
 # invoke global X session script
