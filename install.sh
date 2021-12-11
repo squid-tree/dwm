@@ -20,6 +20,8 @@ echo "Compiling DMenu";
 $PERM make clean install -C $DIR/dmenu-5.0;
 echo "Compiling st";
 $PERM make clean install -C $DIR/st-0.8.4;
+echo "Compiling Bar";
+$PERM make install -C $DIR/dwm-bar;
 echo "Cping .xinitrc";
 cp $DIR/.xinitrc ~/.xinitrc;
 echo "Done";
