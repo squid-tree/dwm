@@ -5,8 +5,7 @@
 ## Dependencies (Arch)
 * feh
 * flameshot
-* xorg
-* xorg-xinit
+* xorg-server xorg-xinit libx11 libxinerama webkit2gtk
 * pamixer
 * fcitx5
 * fcitx5-configtool
