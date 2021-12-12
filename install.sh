@@ -9,7 +9,7 @@ get_perm () {
     fi
 }  
 echo "Installing Deps (Ensure yay is installed)";
-pacman -S feh bc flameshot xorg xorg-xinit pamixer fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-mozc ttf-roboto-mono --needed --noconfirm;
+pacman -S feh flameshot xorg xorg-xinit pamixer fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-mozc ttf-roboto-mono --needed --noconfirm;
 yay -S ttf-meslo ttf-symbola --noconfirm --needed;
 echo "Installing Icon Font";
 $PERM cp $DIR/baricons/fonts/icomoon.ttf /usr/share/fonts/TTF;

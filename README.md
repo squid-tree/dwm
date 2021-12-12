@@ -4,7 +4,6 @@
 
 ## Dependencies (Arch)
 * feh
-* bc
 * flameshot
 * xorg
 * xorg-xinit
