@@ -67,7 +67,7 @@ int main(void) {
         return 1;
     }
 
-    for (;;sleep(2)) {
+    for (;;sleep(1)) {
         l = getvol(status, sizeof(status) - l);
         l += getdatetime(status + l, sizeof(status) - l);
 

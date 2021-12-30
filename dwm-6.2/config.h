@@ -3,7 +3,7 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 4;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -18,8 +18,8 @@ static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577"; //orig #7703fc
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, "#7703fc" },
-	[SchemeSel]  = { col_gray4, col_cyan,  "#7703fc"  },
+	[SchemeNorm] = { col_gray3, col_gray1, "#FFFFFF" },
+	[SchemeSel]  = { col_gray4, col_cyan,  "#FFFFFF"  },
 	[SchemeStatus]  = { col_gray3, "#697395",  "#000000"  }, //statusbar right {text,background,not used but cannot be empty}
 	[SchemeTagsSel]  = { col_gray4, "#9f37ff",  "#000000"  }, //tagbar left selected {text,background,not used but cannot be empty}
     [SchemeTagsNorm]  = { col_gray3, "#697395",  "#000000"  }, //tagbar left unselected {text,background,not used but cannot be empty}
