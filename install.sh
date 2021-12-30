@@ -9,7 +9,7 @@ get_perm () {
     fi
 }  
 echo "Installing Deps (Ensure yay is installed)";
-pacman -S feh flameshot xorg-server libx11 libxinerama libxft webkit2gtk xorg-xinit pamixer fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-mozc ttf-roboto-mono --needed --noconfirm;
+pacman -S feh flameshot xorg-server libx11 libxinerama libxft webkit2gtk xorg-xinit pamixer fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-mozc ttf-roboto-mono alacritty --needed --noconfirm;
 yay -S ttf-meslo ttf-symbola --noconfirm --needed;
 echo "Installing Icon Font";
 $PERM cp $DIR/baricons/fonts/icomoon.ttf /usr/share/fonts/TTF;
@@ -22,6 +22,9 @@ echo "Compiling st";
 $PERM make clean install -C $DIR/st-0.8.4;
 echo "Compiling Bar";
 $PERM make install -C $DIR/dwm-bar;
+echo "Cping alacritty config";
+mkdir -p ~/.config/alacritty;
+cp $DIR/alacritty.yml ~/.config/alacritty/alacritty.yml;
 echo "Cping .xinitrc";
 cp $DIR/.xinitrc ~/.xinitrc;
 echo "Done";
