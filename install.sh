@@ -14,7 +14,6 @@ if [ $FIND == "/usr/bin/doas" ]
         PERM="sudo"
 fi
 
-$PERM pacman -Syyu;
 echo "Installing Deps (Ensure yay is installed)";
 $PERM pacman -S feh flameshot xorg-server libx11 libxinerama libxft webkit2gtk xorg-xinit pamixer fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-mozc ttf-roboto-mono alacritty --needed --noconfirm;
 $PERM yay -S ttf-meslo ttf-symbola --noconfirm --needed;
